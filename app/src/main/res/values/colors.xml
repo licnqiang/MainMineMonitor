@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#1f9cee</color>
+    <color name="colorPrimaryDark">#1f9cee</color>
+    <!--<color name="colorPrimaryDark">#1d73bb</color>-->
+    <color name="colorAccent">#FF4081</color>
+
+    <!--<color name="colorPrimary">#455A64</color>-->
+    <!--<color name="colorPrimaryDark">#263238</color>-->
+    <!--<color name="colorAccent">#D50000</color>-->
+
+    <color name="colorGray">#6e6e6e</color>
+    <color name="white">#ffffff</color>
+    <color name="colorGray_0">#f0f0f0</color>
+    <color name="colorGray_8">#808080</color>
+    <color name="colorGray_8c">#8c9099</color>
+    <color name="colorGray_c">#CCCCCC</color>
+    <color name="colorGray_9">#9a9ea7</color>
+    <color name="colorGray_a">#a5a5a5</color>
+    <color name="black">#000000</color>
+    <color name="darkblue">#1d73bb</color>
+    <color name="bright_blue">#66ccff</color>
+    <color name="color_gray_bg">#f1f1f1</color>
+    <color name ="home_bottom">#00abf9</color>
+    <color name="color_line">#f0f0f0</color>
+    <color name="theme_color1">#55f86c41</color>
+    <color name="transparent">#00000000</color>
+    <color name="bg_color">#F5F5F5</color>
+    <color name="blue_theme">#08AFE2</color>
+    <color name="transprent">#00000000</color>
+    <color name="gray_e0">#e0e0e0</color>
+    <color name="blue">#FF375BF1</color>
+    <color name="red">#F53307</color>
+    <color name="kuang">#CFD1D7</color>
+    <color name="bg_home_sz">#4D4D4D</color>
+    <color name="bg_home_sz_text">#0082D5</color>
+    <color name="bg_ing">#FFA500</color>
+    <color name="bg_no">#EE0000</color>
+    <color name="bg_end">#00cc66</color>
+</resources>

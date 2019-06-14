@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="PointShapeView">
+        <attr name="stroke_color" format="color"></attr>
+        <attr name="solid_color" format="color"></attr>
+        <attr name="point_shape" format="enum">
+            <enum name="triangle" value="0"></enum>
+            <enum name="square" value="1"></enum>
+            <enum name="round" value="2"></enum>
+        </attr>
+    </declare-styleable>
+</resources>

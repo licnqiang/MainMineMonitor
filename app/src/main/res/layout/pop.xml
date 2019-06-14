@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#ffff"
+    android:orientation="vertical">
+
+<RelativeLayout
+    android:layout_width="60dp"
+    android:layout_height="75dp">
+    <ImageView
+        android:id="@+id/iv_pop_back"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:background="@drawable/icon_back"
+        android:padding="10dp" />
+
+</RelativeLayout>
+
+
+    <LinearLayout
+        android:id="@+id/ll_rw"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"
+        android:padding="20dp">
+
+        <ImageView
+            android:layout_width="25dp"
+            android:layout_height="28dp"
+            android:background="@drawable/bg_sz_rw" />
+
+        <TextView
+            android:id="@+id/btn_task"
+            android:layout_width="120dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:text="任务导出"
+            android:textColor="@drawable/bg_text_sz_rw"
+            android:textSize="20sp" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/ll_sz"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"
+        android:padding="20dp">
+
+        <ImageView
+            android:layout_width="28dp"
+            android:layout_height="28dp"
+            android:background="@drawable/bg_sz_sz" />
+
+        <TextView
+            android:id="@+id/btn_setting"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="5dp"
+            android:layout_marginLeft="10dp"
+            android:text="设置"
+            android:textColor="@drawable/bg_text_sz_sz"
+            android:textSize="20sp" />
+
+    </LinearLayout>
+
+
+</LinearLayout>

@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:orientation="vertical">
+
+    <LinearLayout
+        android:id="@+id/layout_region_font_color"
+        style="@style/layer_setting_item_style">
+
+        <TextView
+            style="@style/layer_setting_text_style"
+            android:text="填充色"/>
+
+        <TextView
+            android:id="@+id/tv_region_fore_color"
+            android:layout_width="50px"
+            android:layout_height="50px"
+            android:background="@color/colorPrimary"
+            android:textSize="14sp"
+            />
+
+        <ImageView style="@style/layer_setting_item_arrow_style"/>
+
+    </LinearLayout>
+
+    <View style="@style/line_style"/>
+
+    <LinearLayout
+        android:id="@+id/layout_region_tm"
+        style="@style/layer_setting_item_style">
+
+        <TextView
+            style="@style/layer_setting_text_style"
+            android:text="透明度"/>
+
+        <TextView
+            android:id="@+id/tv_region_tm"
+            style="@style/layer_setting_text_value_style"
+            android:text="100%"/>
+
+        <ImageView style="@style/layer_setting_item_arrow_style"/>
+
+    </LinearLayout>
+
+    <View style="@style/line_style"/>
+
+    <View
+        style="@style/line_style"
+        android:layout_marginTop="30px"/>
+
+    <LinearLayout
+        android:id="@+id/layout_line_type"
+        style="@style/layer_setting_item_style">
+
+        <TextView
+            style="@style/layer_setting_text_style"
+            android:text="线型" />
+
+        <TextView
+            android:id="@+id/tv_line_type"
+            style="@style/layer_setting_text_value_style"
+            android:text="实线" />
+
+        <ImageView style="@style/layer_setting_item_arrow_style" />
+
+    </LinearLayout>
+
+    <View style="@style/line_style" />
+
+    <LinearLayout
+        android:id="@+id/layout_line_width"
+        style="@style/layer_setting_item_style">
+
+        <TextView
+            style="@style/layer_setting_text_style"
+            android:text="线宽" />
+
+        <TextView
+            android:id="@+id/tv_line_width"
+            style="@style/layer_setting_text_value_style"
+            android:text="2" />
+
+        <ImageView style="@style/layer_setting_item_arrow_style" />
+
+    </LinearLayout>
+
+    <View style="@style/line_style" />
+
+    <LinearLayout
+        android:id="@+id/layout_line_color"
+        style="@style/layer_setting_item_style">
+
+        <TextView
+            style="@style/layer_setting_text_style"
+            android:text="线颜色" />
+
+        <TextView
+            android:id="@+id/tv_line_color"
+            android:layout_width="50px"
+            android:layout_height="50px"
+            android:background="@color/colorPrimary"
+            android:textSize="14sp"
+            />
+
+        <ImageView style="@style/layer_setting_item_arrow_style" />
+    </LinearLayout>
+</LinearLayout>

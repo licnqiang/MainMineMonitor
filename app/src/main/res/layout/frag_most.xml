@@ -1,0 +1,27 @@
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="cn.piesat.minemonitor.fragment.MostFragment">
+
+    <ImageView
+        android:id="@+id/iv_layer"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="8dp"
+        android:layout_marginTop="60dp"
+        android:src="@drawable/switch_map" />
+
+    <ImageView
+        android:id="@+id/iv_ic_layer"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_alignParentRight="true"
+        android:layout_below="@+id/iv_layer"
+        android:layout_marginRight="8dp"
+        android:layout_marginTop="30dp"
+        android:src="@drawable/ic_layer_n" />
+
+</RelativeLayout>

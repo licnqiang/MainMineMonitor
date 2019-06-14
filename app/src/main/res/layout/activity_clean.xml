@@ -1,0 +1,280 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:lh2="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:orientation="vertical"
+    tools:context="cn.piesat.minemonitor.setting.CleanActivity">
+
+    <cn.piesat.minemonitor.util.SettingTitleLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="10dp">
+
+        <LinearLayout
+            android:id="@+id/ll_setting_clean_all_clean"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:background="@drawable/content_text"
+            android:orientation="horizontal"
+            android:padding="12dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="清理全部"
+                android:textSize="16sp" />
+
+            <ToggleButton
+                android:id="@+id/tb_all_clean"
+                style="@style/MySwitch"
+                android:layout_width="wrap_content"
+                android:layout_height="25dp"
+                android:layout_marginLeft="30dp"
+                android:background="#00000000"
+                android:checked="true"
+                android:textOff="@null"
+                android:textOn="@null" />
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1" />
+
+            <TextView
+                android:id="@+id/tv_setting_clean_all_clean"
+                style="@style/clean_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/clean"
+                android:visibility="gone" />
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/tv_show_init"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/ll_setting_clean_all_clean"
+            android:layout_marginBottom="15dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="10dp"
+            android:text="默认清除全部，下面所有选择按钮被选中，点击“清除”执行全部清理，也可以关闭清理全部按钮，在下方选择单项目录进行清除"
+            android:textSize="16sp" />
+
+        <LinearLayout
+            android:id="@+id/ll_setting_clean_photo"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tv_show_init"
+            android:background="@drawable/content_text"
+            android:orientation="horizontal"
+            android:padding="12dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="照片"
+                android:textSize="16sp" />
+
+            <ToggleButton
+                android:id="@+id/tb_photo"
+                style="@style/MySwitch"
+                android:layout_width="wrap_content"
+                android:layout_height="25dp"
+                android:layout_marginLeft="62dp"
+                android:background="#00000000"
+                android:checked="true"
+                android:textOff="@null"
+                android:textOn="@null" />
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1" />
+
+            <TextView
+                android:id="@+id/tv_setting_clean_photo"
+                style="@style/clean_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/clean"
+                android:visibility="gone" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/ll_setting_clean_video"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/ll_setting_clean_photo"
+            android:layout_marginTop="15dp"
+            android:background="@drawable/content_text"
+            android:orientation="horizontal"
+            android:padding="12dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="视频"
+                android:textSize="16sp" />
+
+            <ToggleButton
+                android:id="@+id/tb_video"
+                style="@style/MySwitch"
+                android:layout_width="wrap_content"
+                android:layout_height="25dp"
+                android:layout_marginLeft="62dp"
+                android:background="#00000000"
+                android:checked="true"
+                android:textOff="@null"
+                android:textOn="@null" />
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1" />
+
+            <TextView
+                android:id="@+id/tv_setting_clean_video"
+                style="@style/clean_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/clean"
+                android:visibility="gone" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/ll_setting_clean_parse_data"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/ll_setting_clean_video"
+            android:layout_marginTop="15dp"
+            android:background="@drawable/content_text"
+            android:orientation="horizontal"
+            android:padding="12dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="解译数据"
+                android:textSize="16sp" />
+
+            <ToggleButton
+                android:id="@+id/tb_parse_data"
+                style="@style/MySwitch"
+                android:layout_width="wrap_content"
+                android:layout_height="25dp"
+                android:layout_marginLeft="30dp"
+                android:background="#00000000"
+                android:checked="true"
+                android:textOff="@null"
+                android:textOn="@null" />
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1" />
+
+            <TextView
+                android:id="@+id/tv_setting_clean_parse_data"
+                style="@style/clean_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/clean"
+                android:visibility="gone" />
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:id="@+id/ll_setting_clean_validation"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/ll_setting_clean_parse_data"
+            android:layout_marginTop="15dp"
+            android:background="@drawable/content_text"
+            android:orientation="horizontal"
+            android:padding="12dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="验证成果"
+                android:textSize="16sp" />
+
+            <ToggleButton
+                android:id="@+id/tb_validation"
+                style="@style/MySwitch"
+                android:layout_width="wrap_content"
+                android:layout_height="25dp"
+                android:layout_marginLeft="30dp"
+                android:background="#00000000"
+                android:checked="true"
+                android:textOff="@null"
+                android:textOn="@null" />
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1" />
+
+            <TextView
+                android:id="@+id/tv_setting_clean_validation"
+                style="@style/clean_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/clean"
+                android:visibility="gone" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/ll_setting_clean_task_data"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/ll_setting_clean_validation"
+            android:layout_marginTop="15dp"
+            android:background="@drawable/content_text"
+            android:orientation="horizontal"
+            android:padding="12dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+
+                android:text="任务数据"
+                android:textSize="16sp" />
+
+            <ToggleButton
+                android:id="@+id/tb_task_data"
+                style="@style/MySwitch"
+                android:layout_width="wrap_content"
+                android:layout_height="25dp"
+                android:layout_marginLeft="30dp"
+                android:background="#00000000"
+                android:checked="true"
+                android:textOff="@null"
+                android:textOn="@null" />
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1" />
+
+            <TextView
+                android:id="@+id/iv_setting_clean_task_data"
+                style="@style/clean_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/clean"
+                android:visibility="gone" />
+        </LinearLayout>
+
+    </RelativeLayout>
+
+</LinearLayout>

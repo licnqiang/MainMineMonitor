@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:rimage="http://schemas.android.com/apk/res-auto"
+    tools:context="cn.piesat.minemonitor.MapSwitchActivity">
+
+    <pie.map.MapViews
+        android:id="@+id/mvs_pie_basic_map"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"/>
+
+    <Button
+        android:id="@+id/btn_pie_switch_map"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="50dp"
+        android:text="地图切换" />
+
+
+    <cn.piesat.minemonitor.views.RotateImageView
+        android:id="@+id/riv_pie_fix_compass"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_alignParentLeft="true"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="10dp"
+        android:src="@drawable/pie_sdk_fix_compass"
+        rimage:angle="0" />
+    <LinearLayout
+        android:id="@+id/ll_pie_unuses"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:orientation="vertical" >
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="15dp" >
+
+            <ImageButton
+                android:id="@+id/ib_pie_zoom_in"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_alignParentRight="true"
+                android:layout_marginBottom="1dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginRight="6dp"
+                android:background="@drawable/bg_zoom_in_selector" />
+
+            <ImageButton
+                android:id="@+id/ib_pie_zoom_out"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_alignParentRight="true"
+                android:layout_below="@id/ib_pie_zoom_in"
+                android:layout_marginBottom="10dp"
+                android:layout_marginRight="6dp"
+                android:background="@drawable/bg_zoom_out_selector" />
+
+            <LinearLayout
+                android:id="@+id/ll_pie_scale"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="6dp"
+                android:orientation="vertical" >
+
+                <TextView
+                    android:id="@+id/tv_pie_scale_value"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:text="0 m"
+                    android:textColor="@color/red"
+                    android:textSize="12sp" />
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/pie_ic_scale" />
+            </LinearLayout>
+            <ImageButton
+                android:id="@+id/ib_pie_location_to_dem"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_alignBottom="@id/ib_pie_zoom_out"
+                android:layout_marginLeft="6dp"
+                android:src="@drawable/pie_ic_location"
+                android:layout_marginBottom="50dp"
+                android:visibility="visible" />
+        </RelativeLayout>
+    </LinearLayout>
+
+</RelativeLayout>

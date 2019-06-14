@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:background="@drawable/voip_toast_bg"
+    android:padding="20dip" >
+
+    <cn.piesat.minemonitor.util.ProgressLoadView
+        android:id="@+id/loadingImageView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true" />
+
+    <TextView
+        android:id="@+id/id_tv_loadingmsg"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/loadingImageView"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="5dip"
+        android:gravity="center_vertical|center_horizontal"
+        android:minWidth="140dip"
+        android:text="正在加载..."
+        android:textColor="@android:color/white"
+        android:textSize="14sp" />
+
+</RelativeLayout>

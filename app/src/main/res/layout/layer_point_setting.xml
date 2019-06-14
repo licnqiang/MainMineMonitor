@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <LinearLayout style="@style/layer_setting_item_style">
+
+        <TextView
+            style="@style/layer_setting_text_style"
+            android:text="符号样式" />
+
+        <TextView
+            style="@style/layer_setting_text_value_style"
+            android:text="圆形" />
+
+        <ImageView style="@style/layer_setting_item_arrow_style" />
+
+    </LinearLayout>
+
+    <View style="@style/line_style" />
+
+    <LinearLayout
+        android:id="@+id/layout_point_size"
+        style="@style/layer_setting_item_style">
+
+        <TextView
+            style="@style/layer_setting_text_style"
+            android:text="符号大小" />
+
+        <TextView
+            android:id="@+id/tv_point_size"
+            style="@style/layer_setting_text_value_style"
+            android:text="24" />
+
+        <ImageView style="@style/layer_setting_item_arrow_style" />
+
+    </LinearLayout>
+
+    <View style="@style/line_style" />
+
+    <LinearLayout
+        style="@style/layer_setting_item_style"
+        android:visibility="gone">
+
+        <TextView
+            style="@style/layer_setting_text_style"
+            android:text="对齐方式" />
+
+        <TextView
+            style="@style/layer_setting_text_value_style"
+            android:text="正方形" />
+
+        <ImageView style="@style/layer_setting_item_arrow_style" />
+
+    </LinearLayout>
+
+    <View
+        style="@style/line_style"
+        android:visibility="gone" />
+
+    <LinearLayout
+        android:id="@+id/layout_point_color"
+        style="@style/layer_setting_item_style">
+
+        <TextView
+            style="@style/layer_setting_text_style"
+            android:text="符号颜色" />
+
+        <TextView
+            android:id="@+id/tv_point_color"
+            android:layout_width="50px"
+            android:layout_height="50px"
+            android:background="@color/colorPrimary"
+            android:textSize="14sp"
+             />
+
+        <ImageView style="@style/layer_setting_item_arrow_style" />
+    </LinearLayout>
+</LinearLayout>

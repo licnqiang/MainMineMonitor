@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <LinearLayout style="@style/layer_setting_item_style">
+
+        <TextView
+            style="@style/layer_setting_text_style"
+            android:text="标签专题图" />
+
+        <Switch
+            android:id="@+id/sw_labeltheme"
+            style="@style/widget_gender_switch"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:switchMinWidth="35dp" />
+
+        <ImageView style="@style/layer_setting_item_arrow_style" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/ll_themelayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:visibility="gone"
+        >
+
+        <View style="@style/line_style" />
+
+        <LinearLayout
+            android:id="@+id/ll_position"
+            style="@style/layer_setting_item_style">
+
+            <TextView
+                style="@style/layer_setting_text_style"
+                android:text="标注位置" />
+
+            <TextView
+                android:id="@+id/tv_position"
+                style="@style/layer_setting_text_value_style"
+                android:text="水平" />
+
+            <ImageView style="@style/layer_setting_item_arrow_style" />
+
+        </LinearLayout>
+
+        <View style="@style/line_style" />
+
+        <LinearLayout android:id="@+id/ll_fontsize"
+            style="@style/layer_setting_item_style">
+
+            <TextView
+                style="@style/layer_setting_text_style"
+                android:text="标注字号" />
+
+            <TextView
+                android:id="@+id/tv_fontsize"
+                style="@style/layer_setting_text_value_style"
+                android:text="15" />
+
+            <ImageView style="@style/layer_setting_item_arrow_style" />
+
+        </LinearLayout>
+
+        <View style="@style/line_style"/>
+
+        <LinearLayout
+            android:id="@+id/ll_mark_color"
+            style="@style/layer_setting_item_style">
+
+            <TextView
+                style="@style/layer_setting_text_style"
+                android:text="标注颜色" />
+
+            <TextView
+                android:id="@+id/tv_mark_color"
+                android:layout_width="50px"
+                android:layout_height="50px"
+                android:background="@color/colorAccent"
+                android:textSize="14sp"
+                />
+
+            <ImageView style="@style/layer_setting_item_arrow_style" />
+        </LinearLayout>
+        <View style="@style/line_style" />
+
+        <LinearLayout android:id="@+id/ll_field"
+            style="@style/layer_setting_item_style">
+
+            <TextView
+                style="@style/layer_setting_text_style"
+                android:text="标注字段" />
+
+            <TextView
+                android:id="@+id/tv_field"
+                style="@style/layer_setting_text_value_style"
+                android:text="请选择" />
+
+            <ImageView style="@style/layer_setting_item_arrow_style" />
+
+        </LinearLayout>
+    </LinearLayout>
+</LinearLayout>

@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:clickable="true"
+    android:orientation="vertical"
+    android:background="@drawable/bg_shape_rect_white"
+    >
+    <!--android:background="@drawable/dialog_timeinfobg"-->
+    <TextView
+        android:id="@+id/tv_tftitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="请选择标签表达式"
+        android:layout_margin="8dp"
+        android:textColor="@color/colorGray_8"/>
+    <TextView
+        android:id="@+id/line"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="#0199CC"
+        android:layout_marginTop="5dp"
+        android:layout_below="@+id/tv_tftitle"/>
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/rv_fieldlists"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:layout_below="@id/line"
+        android:layout_marginBottom="8dp"
+       >
+
+    </android.support.v7.widget.RecyclerView>
+</LinearLayout>
+
+

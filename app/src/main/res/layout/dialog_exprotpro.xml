@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:clickable="true"
+    android:orientation="vertical"
+    android:background="@drawable/bg_shape_rect_white"
+    >
+    <!--android:background="@drawable/dialog_timeinfobg"-->
+    <TextView
+        android:id="@+id/tv_tftitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="请选择需要导出的数据"
+        android:layout_margin="8dp"
+        android:textColor="@color/colorGray_8"/>
+    <TextView
+        android:id="@+id/line"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="#0199CC"
+        android:layout_marginTop="5dp"
+        android:layout_below="@+id/tv_tftitle"/>
+
+    <LinearLayout
+        android:id="@+id/ll_bottom"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="10dp"
+        android:layout_alignParentBottom="true"
+        android:gravity="center_horizontal">
+
+        <Button
+            android:id="@+id/cancel_button"
+            style="@style/dialog_blue_button"
+            android:layout_marginRight="10dp"
+            android:background="@drawable/gray_button_background"
+            android:text="@string/dialog_cancel"/>
+
+        <Button
+            android:id="@+id/confirm_button"
+            style="@style/dialog_blue_button"
+            android:text="@string/dialog_ok"/>
+    </LinearLayout>
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/rv_dslists"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:layout_below="@id/line"
+        android:layout_above="@id/ll_bottom">
+
+    </android.support.v7.widget.RecyclerView>
+</RelativeLayout>
+
+

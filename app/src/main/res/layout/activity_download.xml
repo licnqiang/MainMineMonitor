@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:lh2="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:background="@color/bright_blue"
+    tools:context="cn.piesat.minemonitor.setting.DownloadActivity">
+
+    <cn.piesat.minemonitor.util.SettingTitleLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginTop="100dp"
+        android:layout_marginLeft="100dp"
+        android:layout_marginRight="100dp"
+        android:background="@color/colorGray"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="150dp"
+        android:layout_marginTop="20dp"
+        android:orientation="horizontal">
+
+        <cn.piesat.minemonitor.util.DrawableSwitch
+            android:layout_width="0dp"
+            android:layout_height="30dp"
+            android:layout_weight="0.9"
+            android:layout_marginTop="4dp"
+            lh2:circleColor="#F9F9F9"
+            lh2:isSwitchOn="false"
+            lh2:radius="10dp"
+            lh2:switchOffColor="#D8D8D8"
+            lh2:switchOnColor="#00ff66"
+            lh2:textColor="#1C1C0F" />
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="5"
+            android:text="在线下载"
+            android:gravity="left"
+            android:textSize="20sp"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:orientation="horizontal">
+        <TextView
+            android:layout_width="0dp"
+            android:layout_weight="2"
+            android:layout_height="wrap_content"
+            android:text="选择地图包"
+            android:textSize="20sp"
+            android:gravity="right"
+            />
+
+        <ImageView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="2.8"
+            android:layout_marginLeft="10dp"
+            android:paddingLeft="20dp"
+            android:src="@drawable/share"
+            />
+
+    </LinearLayout>
+
+
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginLeft="100dp"
+        android:layout_marginRight="100dp"
+        android:layout_marginTop="20dp"
+        android:background="@color/colorGray"/>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="150dp"
+        android:layout_marginTop="20dp"
+        android:orientation="horizontal">
+
+        <cn.piesat.minemonitor.util.DrawableSwitch
+            android:layout_width="0dp"
+            android:layout_height="30dp"
+            android:layout_weight="0.9"
+            android:layout_marginTop="4dp"
+            lh2:circleColor="#F9F9F9"
+            lh2:isSwitchOn="false"
+            lh2:radius="10dp"
+            lh2:switchOffColor="#D8D8D8"
+            lh2:switchOnColor="#00ff66"
+            lh2:textColor="#1C1C0F" />
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="5"
+            android:text="本地导入"
+            android:gravity="left"
+            android:textSize="20sp"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:orientation="horizontal">
+        <TextView
+            android:layout_width="0dp"
+            android:layout_weight="2"
+            android:layout_height="wrap_content"
+            android:text="选择地图包"
+            android:textSize="20sp"
+            android:gravity="right"
+            />
+
+        <ImageView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="2.8"
+            android:layout_marginLeft="10dp"
+            android:paddingLeft="20dp"
+            android:src="@drawable/share"
+            />
+
+    </LinearLayout>
+
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginLeft="100dp"
+        android:layout_marginRight="100dp"
+        android:layout_marginTop="20dp"
+        android:background="@color/colorGray"/>
+
+
+</LinearLayout>

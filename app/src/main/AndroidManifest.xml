@@ -1,0 +1,171 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="cn.piesat.minemonitor">
+
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    //获取设备网络状态，禁用后无法获取网络状态
+    <uses-permission android:name="android.permission.INTERNET" />
+    //GPS定位
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    //网络权限，当禁用后，无法进行检索等相关业务
+    <uses-permission android:name="android.permission.KILL_BACKGROUND_PROCESSES" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    //读取设备硬件信息，统计数据
+    <uses-permission android:name="com.android.launcher.permission.READ_SETTINGS" />
+    //读取系统信息，包含系统版本等信息，用作统计
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    //获取设备的网络状态，鉴权所需网络代理
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    //允许sd卡写权限，需写入地图数据，禁用后无法显示地图
+    <uses-permission android:name="android.permission.WRITE_SETTINGS" />
+    //获取统计数据
+    <uses-permission android:name="android.permission.GET_TASKS" />
+    //鉴权所需该权限获取进程列表
+    <uses-permission android:name="android.permission.CAMERA" />
+    //使用步行AR导航，配置Camera权限
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <!-- 调用摄像头权限 -->
+    <uses-feature android:name="android.hardware.camera" />
+    <uses-feature android:name="android.hardware.camera.autofocus" />
+    <!-- 硬件支持 -->
+    <uses-permission android:name="android.permission.RECORD_AUDIO" />
+    <!-- 录制视频/音频权限 -->
+    <uses-permission android:name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+
+
+    <!-- 挂载sd卡 -->
+    <application
+        android:name=".base.AppContext"
+        android:allowBackup="true"
+        android:icon="@mipmap/logo1"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/logo1"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <service
+            android:name="com.baidu.location.f"
+            android:enabled="true"
+            android:process=":remote" />
+
+        <meta-data
+            android:name="com.baidu.lbsapi.API_KEY"
+            android:value="C7uMCiWXtmNtCvxNxGBBOsCa64tM9UFY" />
+        <!-- UMt9xmj61HkXrIZ9v52KTn4VfC5L5g0V -->
+        <!-- siFOuBjxsdaZXNrcg54dyHNPamKcAr7j -->
+        <!-- nb3RoDwxSpqDRp2vQpcVkCcPsKU4rhAe -->
+        <!-- android:name=".OffLineMapActivity" -->
+        <activity
+            android:name=".MainActivity"
+            android:screenOrientation="landscape">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".TaskListActivity"
+            android:launchMode="singleTask" />
+        <activity
+            android:name=".SettingActivity"
+            android:launchMode="singleTask" />
+        <activity
+            android:name=".setting.CleanActivity"
+            android:launchMode="singleTask" />
+        <activity
+            android:name=".setting.ImportActivity"
+            android:launchMode="singleTask" />
+        <activity
+            android:name=".setting.DownloadActivity"
+            android:launchMode="singleTask" />
+        <activity
+            android:name=".OffLineMapActivity"
+            android:launchMode="singleTask" />
+        <activity
+            android:name=".home.CurrentTaskActivity"
+            android:launchMode="singleTask" />
+        <activity
+            android:name=".home.FigureSpotActivity"
+            android:launchMode="singleTask" />
+        <activity
+            android:name=".home.MissionLocusActivity"
+            android:launchMode="singleTask" />
+        <activity
+            android:name=".home.ContentListActivity"
+            android:launchMode="singleTask" />
+        <activity
+            android:name=".RegisteredActivity"
+            android:launchMode="singleTask" />
+        <activity
+            android:name=".home.contentlist.ChangeMapActivity"
+            android:launchMode="singleTask" />
+        <activity
+            android:name=".FileListActivity"
+            android:launchMode="singleTask" />
+
+        <provider
+            android:name="android.support.v4.content.FileProvider"
+            android:authorities="cn.piesat.minemonitor.fileprovider"
+            android:exported="false"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/file_paths" />
+        </provider>
+
+        <activity
+            android:name=".home.contentlist.ShowMediaActivity"
+            android:launchMode="singleTask" />
+        <activity
+            android:name=".media.PlayMediaActivity"
+            android:launchMode="singleTask" />
+        <activity
+            android:name=".home.VerIngActivity"
+            android:launchMode="singleTask" />
+        <activity
+            android:name=".home.VerEndActivity"
+            android:launchMode="singleTask" />
+        <activity
+            android:name=".home.VerNoActivity"
+            android:launchMode="singleTask" />
+        <activity
+            android:name=".setting.UserManagmentActivity"
+            android:launchMode="singleTask" />
+        <activity
+            android:name=".HomeActivity"
+            android:launchMode="singleTask" />
+        <activity
+            android:name=".LayerManageActivity"
+            android:launchMode="singleTask" />
+        <activity
+            android:name=".LayerSettingActivity"
+            android:launchMode="singleTask" />
+        <activity
+            android:name=".home.CListActivity"
+            android:launchMode="singleTask" />
+        <activity
+            android:name=".home.AddMapActivity"
+            android:launchMode="singleTask" />
+        <activity
+            android:name=".MapRelatedActivity"
+            android:launchMode="singleTask" />
+
+        <service
+            android:name=".home.service.LongRunningService"
+            android:enabled="true"
+            android:exported="true" />
+
+        <receiver
+            android:name=".home.service.AlarmReceiver"
+            android:enabled="true"
+            android:exported="true" />
+
+        <activity
+            android:name=".home.minetype.MineTypeQueryActivity"
+            android:launchMode="singleTask" />
+    </application>
+
+</manifest>

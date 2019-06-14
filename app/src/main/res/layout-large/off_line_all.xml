@@ -1,0 +1,43 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/bg_color"
+    android:orientation="vertical" >
+
+    <LinearLayout
+        android:id="@+id/citylist_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical" >
+
+        <TextView
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/blue_theme"
+            android:padding="5dp"
+            android:text="热门城市"
+            android:textColor="@color/white" />
+
+        <ListView
+            android:id="@+id/hotcitylist"
+            android:layout_width="fill_parent"
+            android:layout_height="120dip"
+            android:scrollbars="vertical" />
+
+        <TextView
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/blue_theme"
+            android:padding="5dp"
+            android:text="全国"
+            android:textColor="@color/white" />
+
+        <ExpandableListView
+            android:id="@+id/allcitylist"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:scrollbars="vertical"
+            android:groupIndicator="@null"/>
+    </LinearLayout>
+
+</LinearLayout>

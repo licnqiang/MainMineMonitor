@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:paddingLeft="8dp"
+    android:paddingRight="8dp"
+    android:id="@+id/ll_dslist"
+    >
+
+    <CheckBox
+        android:id="@+id/cb_dscheck"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:layout_gravity="center_vertical"
+        android:layout_margin="5dp"
+        android:button="@null"
+        android:background="@drawable/bg_checkbox_selector"
+        />
+
+
+    <TextView
+        android:id="@+id/tv_dsname"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:layout_gravity="center_vertical"
+        android:textColor="@color/colorGray_8"
+        android:textSize="14sp"
+        android:text="MEWEN"
+        >
+    </TextView>
+</LinearLayout>

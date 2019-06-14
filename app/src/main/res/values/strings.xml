@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">矿山验证</string>
+    <string name="filter_vcode">0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="clean">清除</string>
+    <string name="layer_setting_list">矢量图层集(长按移动图层位置)</string>
+    <string name="layer_setting_title">配置图层</string>
+    <string name="dialog_cancel">取消</string>
+    <string name="dialog_ok">确定</string>
+</resources>

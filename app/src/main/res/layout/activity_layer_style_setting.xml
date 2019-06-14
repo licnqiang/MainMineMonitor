@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorGray_0">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <include layout="@layout/common_title_bar"></include>
+
+        <View
+            style="@style/line_style"
+            android:layout_marginTop="30px"/>
+
+        <FrameLayout
+            android:id="@+id/frgt_type"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@android:color/white">
+        </FrameLayout>
+
+        <View
+            style="@style/line_style"
+            android:layout_marginTop="30px"/>
+
+        <FrameLayout
+            android:id="@+id/frgt_label"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@android:color/white">
+        </FrameLayout>
+    </LinearLayout>
+
+</ScrollView>

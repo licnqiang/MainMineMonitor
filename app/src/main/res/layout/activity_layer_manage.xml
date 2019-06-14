@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorGray_0"
+    android:orientation="vertical">
+
+    <include layout="@layout/common_title_bar"></include>
+
+    <TextView
+        android:id="@+id/tv_base_map"
+        style="@style/project_tvStyle"
+        android:text="底图图层">
+    </TextView>
+
+    <View
+        style="@style/line_style"
+        />
+
+    <LinearLayout
+        android:id="@+id/layout_base_map"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@android:color/white">
+        <include layout="@layout/layer_base_item_draggable_view"></include>
+    </LinearLayout>
+
+
+    <View
+        style="@style/line_style"
+        />
+
+    <TextView
+        style="@style/project_tvStyle"
+        android:text="">
+    </TextView>
+
+    <View
+        style="@style/line_style"
+        />
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/rv_list"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@android:color/white"
+        android:fadingEdge="none"/>
+
+</LinearLayout>
