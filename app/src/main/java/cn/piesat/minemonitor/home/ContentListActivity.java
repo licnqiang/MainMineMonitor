@@ -5,6 +5,7 @@ import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.graphics.Bitmap;
 import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
@@ -47,6 +48,7 @@ import butterknife.ButterKnife;
 import butterknife.OnCheckedChanged;
 import butterknife.OnClick;
 import cn.piesat.minemonitor.BaseActivity;
+import cn.piesat.minemonitor.MainActivity;
 import cn.piesat.minemonitor.MapRelatedActivity;
 import cn.piesat.minemonitor.R;
 import cn.piesat.minemonitor.adapter.TBgcdAdapter;
@@ -57,6 +59,7 @@ import cn.piesat.minemonitor.home.contentlist.ShowMediaActivity;
 import cn.piesat.minemonitor.home.minetype.MineTypeQueryActivity;
 import cn.piesat.minemonitor.mapdata.utils.SpHelper;
 import cn.piesat.minemonitor.media.DialogUtils;
+import cn.piesat.minemonitor.util.ImageUtil;
 import cn.piesat.minemonitor.util.NaviWaysUtils;
 import cn.piesat.minemonitor.util.ToastUtil;
 
@@ -114,6 +117,8 @@ public class ContentListActivity extends BaseActivity implements View.OnClickLis
     private String tbPicLastYear;
     private String thisYearMap = " ";
     private String lastYearMap = " ";
+    private File outputImage;
+    private CheckInfoEntiy checkInfoEntiy;
 
     @OnClick({R.id.tv_qxmc, R.id.dllx, R.id.tv_phlx, R.id.tv_yxdx, R.id.tv_zldx, R.id.tv_kckz, R.id.tv_kcfs, R.id.tv_yzfx, R.id.tv_yzdd})
     public void onViewClick(View view) {
@@ -1065,7 +1070,7 @@ public class ContentListActivity extends BaseActivity implements View.OnClickLis
         if (!path1.exists()) {
             path1.mkdirs();
         }
-        File outputImage = new File(path, picpath);
+        outputImage = new File(path, picpath);
         if (outputImage.exists()) {
             outputImage.delete();
         }
@@ -1227,6 +1232,9 @@ public class ContentListActivity extends BaseActivity implements View.OnClickLis
                                     hideKeyboard(ContentListActivity.this);
                                 } else {
                                     Toast.makeText(ContentListActivity.this, "存储失败", Toast.LENGTH_SHORT).show();
+                                }
+                                if (null != outputImage && null != checkInfoEntiy) {
+                                    ImageUtil.makePhoto(getBaseContext(), outputImage.getPath(), checkInfoEntiy);
                                 }
                                 if (descDialog != null) {
                                     descDialog.dismiss();
@@ -1448,7 +1456,7 @@ public class ContentListActivity extends BaseActivity implements View.OnClickLis
         position = (Integer) v.getTag();
         switch (v.getId()) {
             case R.id.ll_tb_gcd_pz:
-                cieChoose.get(position);
+                checkInfoEntiy = cieChoose.get(position);
                 showVideoDialog(cieChoose.get(position).getFileCreateLocationNo());
                 break;
             case R.id.ll_tb_gcd_tpck:

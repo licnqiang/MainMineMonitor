@@ -403,8 +403,8 @@ public class MainViewPresenter implements MainViewContract.Presenter {
     }
 
     @Override
-    public void addGpsRecordsToTrackerLayer(List<Point2D> list, String tag) {
-        m_view.removeGeometryByTag(tag);
+    public void addGpsRecordsToTrackerLayer(List<Point2D> list, String tag) {m_view.removeGeometryByTag(tag);
+
         int type = m_view.getEditLayer().getLayerType();
         Point2D[] points = new Point2D[list.size()];
         for (int i = 0; i < points.length; i++) {
