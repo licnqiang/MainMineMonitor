@@ -513,7 +513,7 @@
                                 android:layout_gravity="center"
                                 android:layout_marginLeft="20dp"
                                 android:layout_marginRight="22dp"
-                                android:drawableRight="@drawable/icon_xjb"/>
+                                android:drawableRight="@drawable/icon_xjb" />
 
                         </LinearLayout>
 
@@ -602,11 +602,12 @@
                             android:maxLength="50"
                             android:textColor="#757575"
                             android:textSize="14dp" />
+
                         <TextView
                             android:id="@+id/tv_yzfx"
                             android:layout_width="70dp"
                             android:layout_height="wrap_content"
-                            android:drawableRight="@drawable/icon_xjb"/>
+                            android:drawableRight="@drawable/icon_xjb" />
                     </LinearLayout>
 
                     <LinearLayout
@@ -685,7 +686,9 @@
                         android:layout_height="wrap_content"
                         android:layout_marginBottom="10dp"
                         android:background="#6CC0FC"
-                        android:orientation="horizontal">
+                        android:orientation="horizontal"
+                        android:paddingLeft="20dp"
+                        android:paddingRight="20dp">
 
                         <TextView
                             android:id="@+id/tv_this_year"

@@ -58,6 +58,8 @@ import cn.piesat.minemonitor.entity.TaskListEntity;
 import cn.piesat.minemonitor.home.contentlist.ShowMediaActivity;
 import cn.piesat.minemonitor.home.minetype.MineTypeQueryActivity;
 import cn.piesat.minemonitor.mapdata.utils.SpHelper;
+import cn.piesat.minemonitor.mapdata.widget.TouchImageView;
+import cn.piesat.minemonitor.mapdata.widget.ZoomImageView;
 import cn.piesat.minemonitor.media.DialogUtils;
 import cn.piesat.minemonitor.util.ImageUtil;
 import cn.piesat.minemonitor.util.NaviWaysUtils;
@@ -780,7 +782,7 @@ public class ContentListActivity extends BaseActivity implements View.OnClickLis
     public void showDialog(Uri path) {
         dia = new Dialog(this, R.style.edit_AlertDialog_style);
         dia.setContentView(R.layout.activity_dialog1);
-        final ImageView imageView = (ImageView) dia.findViewById(R.id.start_img);
+        final TouchImageView imageView = (TouchImageView) dia.findViewById(R.id.start_img);
         imageView.setImageURI(path);
         dia.show();
         Window window = dia.getWindow();
@@ -788,7 +790,8 @@ public class ContentListActivity extends BaseActivity implements View.OnClickLis
         android.view.WindowManager.LayoutParams params = dia.getWindow().getAttributes();
         Display display = getWindowManager().getDefaultDisplay();
         params.width = (int) (display.getWidth());
-        params.height = (int) (display.getHeight() * 2 / 3);
+//        params.height = (int) (display.getHeight() * 2 / 3);
+        params.height = (int) (display.getHeight());
         params.gravity = Gravity.CENTER;
         window.setAttributes(params);
 //        GestureImageView gs= new GestureImageView(this);

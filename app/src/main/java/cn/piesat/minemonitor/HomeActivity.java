@@ -2,8 +2,10 @@ package cn.piesat.minemonitor;
 
 
 import android.annotation.SuppressLint;
+import android.app.AlertDialog;
 import android.content.ComponentName;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.ServiceConnection;
 import android.content.SharedPreferences;
@@ -12,11 +14,13 @@ import android.graphics.BitmapFactory;
 import android.graphics.Color;
 import android.location.Location;
 import android.location.LocationManager;
+import android.net.Uri;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.IBinder;
 import android.os.Message;
 import android.os.RemoteException;
+import android.provider.Settings;
 import android.support.annotation.Nullable;
 import android.text.TextUtils;
 import android.util.Log;
@@ -1160,40 +1164,38 @@ public class HomeActivity extends BaseActivity implements View.OnClickListener, 
             Toast.makeText(this, "再按一次退出应用", Toast.LENGTH_SHORT).show();
             exitTime = System.currentTimeMillis();
         } else {
-
-            List<String> trackXY = new ArrayList<>();
-            trackXY.addAll(xY());
-            runXy = SpHelper.getStringValue("RUNXY", "1");
-            if (!runXy.equals("1")) {
-
-            } else {
-                if (trackXY.size() > 0) {
-                    s.AddTrack(HomeActivity.this, s.getUUID(), "", devinceNo, trackXY.get(0), trackXY.get(1),
-                            Constant.TRACK_EVENT_QUIT, s.getCurrTime(), SpHelper.getStringValue("USERNAME"), "", Constant.GPS);
-                }
-            }
-
-            onStopClick();
-            Intent intent1 = new Intent(this, LongRunningService.class);
-            stopService(intent1);
-            if (null != mSwitchMapView) {
-                mSwitchMapView.destroyMapWindow();
-            }
-            LoadingDialogTools.showDialog(this);
-            LoadingDialogTools.setMessage("数据删除中，请稍后");
-            deleFile(new DataCallBack() {
-                @Override
-                public void succeed() {
-                    LoadingDialogTools.dismissDialog();
-                    System.exit(0);
-                    finish();
-                }
-
-                @Override
-                public void failed() {
-                    LoadingDialogTools.dismissDialog();
-                }
-            });
+            showPermiDialog();
+//
+//            List<String> trackXY = new ArrayList<>();
+//            trackXY.addAll(xY());
+//            runXy = SpHelper.getStringValue("RUNXY", "1");
+//            if (!runXy.equals("1")) {
+//
+//            } else {
+//                if (trackXY.size() > 0) {
+//                    s.AddTrack(HomeActivity.this, s.getUUID(), "", devinceNo, trackXY.get(0), trackXY.get(1),
+//                            Constant.TRACK_EVENT_QUIT, s.getCurrTime(), SpHelper.getStringValue("USERNAME"), "", Constant.GPS);
+//                }
+//            }
+//
+//            onStopClick();
+//            Intent intent1 = new Intent(this, LongRunningService.class);
+//            stopService(intent1);
+//            if (null != mSwitchMapView) {
+//                mSwitchMapView.destroyMapWindow();
+//            }
+//            deleFile(new DataCallBack() {
+//                @Override
+//                public void succeed() {
+//                    System.exit(0);
+//                    finish();
+//                }
+//
+//                @Override
+//                public void failed() {
+//                    LoadingDialogTools.dismissDialog();
+//                }
+//            });
 //            jieYa()
         }
 
@@ -1201,6 +1203,41 @@ public class HomeActivity extends BaseActivity implements View.OnClickListener, 
     }
 
 
+    /**
+     * 提示手动开启权限
+     */
+    private void showPermiDialog() {
+        new AlertDialog.Builder(HomeActivity.this)
+                .setTitle("退出")
+                .setCancelable(false)
+                .setMessage("是否确定退出应用？")
+                .setPositiveButton("确定", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        LoadingDialogTools.showDialog(HomeActivity.this);
+                        deleFile(new DataCallBack() {
+                            @Override
+                            public void succeed() {
+                                LoadingDialogTools.dismissDialog();
+//                                System.exit(0);
+                                finish();
+                            }
+
+                            @Override
+                            public void failed() {
+                                LoadingDialogTools.dismissDialog();
+                            }
+                        });
+                    }
+                })
+                .setNegativeButton("取消", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        LoadingDialogTools.dismissDialog();
+                    }
+                })
+                .create().show();
+    }
 
 
     private void deleFile(final DataCallBack dataCallBack) {
@@ -1208,6 +1245,25 @@ public class HomeActivity extends BaseActivity implements View.OnClickListener, 
             @Override
             public void run() {
                 try {
+                    List<String> trackXY = new ArrayList<>();
+                    trackXY.addAll(xY());
+                    runXy = SpHelper.getStringValue("RUNXY", "1");
+                    if (!runXy.equals("1")) {
+
+                    } else {
+                        if (trackXY.size() > 0) {
+                            s.AddTrack(HomeActivity.this, s.getUUID(), "", devinceNo, trackXY.get(0), trackXY.get(1),
+                                    Constant.TRACK_EVENT_QUIT, s.getCurrTime(), SpHelper.getStringValue("USERNAME"), "", Constant.GPS);
+                        }
+                    }
+
+                    onStopClick();
+                    Intent intent1 = new Intent(HomeActivity.this, LongRunningService.class);
+                    stopService(intent1);
+//                    if (null != mSwitchMapView) {
+//                        mSwitchMapView.destroyMapWindow();
+//                    }
+
                     List<String> fileList = FileUtil.getFilesAllName(FileUtil.encrypt + SpHelper.getStringValue("FIELD"));
                     for (int i = 0; i < fileList.size(); i++) {
                         if (new File(fileList.get(i) + FileUtil.bt + ".rar").exists()) {

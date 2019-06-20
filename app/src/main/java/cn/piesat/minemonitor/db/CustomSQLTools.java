@@ -446,12 +446,12 @@ public class CustomSQLTools {
         Cursor cursor = db.rawQuery(sql, new String[]{taskNum});
         while (cursor.moveToNext()) {
             thisYear = cursor.getString(cursor
-                    .getColumnIndex("TASK_CREATE_DATE")).substring(0, 4) + "期解译图斑";
+                    .getColumnIndex("TASK_BEGINE_DATE")).substring(0, 4);
             lastYear = cursor.getString(cursor
                     .getColumnIndex("TASK_HISTORY_YEAR"));
             taskbean.add(thisYear);
             if (null != lastYear && !lastYear.equals("null") && !lastYear.equals("")) {
-                taskbean.add(lastYear + "期解译图斑");
+                taskbean.add(lastYear);
             } else {
                 taskbean.add(" ");
             }
