@@ -32,16 +32,24 @@ public class ToastUtil {
 			return;
 		}
 		// 开关开启后才往下执行
-		if (toast == null) {
-			if(context==null)
-			{
-				return;
+		try {
+			if (toast == null) {
+				if(context==null)
+				{
+					return;
+				}
+				toast = Toast.makeText(context, msg, Toast.LENGTH_SHORT);
+			} else {
+				toast.setText(msg);
 			}
-			toast = Toast.makeText(context, msg, Toast.LENGTH_SHORT);
-		} else {
-			toast.setText(msg);
+			toast.show();
+		}catch (Exception e){
+			//解决在子线程中调用Toast的异常情况处理
+			Looper.prepare();
+			Toast.makeText(context, msg, Toast.LENGTH_SHORT).show();
+			Looper.loop();
 		}
-		toast.show();
+
 	}
 
 	/**

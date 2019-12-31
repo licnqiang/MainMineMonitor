@@ -6,7 +6,6 @@ import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Environment;
 import android.util.Log;
-import android.widget.Toast;
 
 import com.baidu.mapapi.model.LatLng;
 
@@ -36,6 +35,8 @@ import cn.piesat.minemonitor.entity.TaskListEntity;
 import cn.piesat.minemonitor.entitys.RegisteredEntity;
 import cn.piesat.minemonitor.home.Constant;
 import cn.piesat.minemonitor.mapdata.utils.SpHelper;
+import cn.piesat.minemonitor.util.LoadingDialogTools;
+import cn.piesat.minemonitor.util.ToastUtil;
 
 
 /**
@@ -109,7 +110,8 @@ public class CustomSQLTools {
             //存在则直接返回打开的数据库
             return SQLiteDatabase.openOrCreateDatabase(jhPath, null);
         } else {
-            Toast.makeText(context, "数据库文件不存在", Toast.LENGTH_SHORT).show();
+//            Toast.makeText(context, "数据库文件不存在", Toast.LENGTH_SHORT).show();
+//            ToastUtil.show(context,"数据库文件不存在");
             return null;
         }
     }
@@ -120,7 +122,11 @@ public class CustomSQLTools {
     public String getPwdName(String userName, String pwd, Context context) {
         String sql = "select employee_name,loginname,password from EMPLOYEE where loginname=? and password=?";
         CustomSQLTools s = new CustomSQLTools();
+
         SQLiteDatabase database = s.openDatabase(context);
+        if (database==null){
+            return "";
+        }
         Cursor cursor = database.rawQuery(sql, new String[]{userName, pwd});
         RegisteredEntity entity = null;
         while (cursor.moveToNext()) {
@@ -657,7 +663,7 @@ public class CustomSQLTools {
             checkbean.addAll(set);
             db.close();
         } else {
-            Toast.makeText(context, "数据有误", Toast.LENGTH_SHORT).show();
+            ToastUtil.show(context, "数据有误");
         }
 
         return checkbean;
@@ -1056,7 +1062,7 @@ public class CustomSQLTools {
                         ",XZQCHANGE,CHECK_ADRESS_NANE)values (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)",
                 new String[]{checkNo, taskID, qxName, qxCode, checkStatus, ksName, kcfs, kckz, dlmc, phlx, yxdx, zldx, tbnum,
                         tbType, tbCheckRes, cx, cy, user, shpName, dataType, tbCheckDes, note, isNew, xzqCheange, yzdd});
-        Toast.makeText(context, "添加成功", Toast.LENGTH_SHORT).show();
+        ToastUtil.show(context, "添加成功");
         db.close();
     }
 

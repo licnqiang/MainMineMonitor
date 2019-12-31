@@ -273,12 +273,15 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
                             }
                             dataCallBack.succeed();
                         } else {
-                            dataCallBack.failed("用户名或密码错误");
+//                            dataCallBack.failed("用户名或密码错误");
+                            dataCallBack.failed("数据库为空或用户数据有误");
                         }
                     } else {
                         dataCallBack.failed("用户名或密码不能为空");
                     }
                 } catch (final Exception e) {
+
+                    Log.e("登陆失败","--"+e.getMessage());
                     dataCallBack.failed(e.getMessage());
                 }
             }

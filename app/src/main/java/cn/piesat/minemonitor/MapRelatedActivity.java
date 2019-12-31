@@ -569,8 +569,10 @@ public class MapRelatedActivity extends BaseActivity implements View.OnClickList
             for (int k = 0; k < layerSets.size(); k++) {
                 String name = layerSets.get(k).getName();
                 Style style = layerSets.get(k).getStyle();
+                if(!name.contains("矿")||!name.contains("_")){
+                    return;
+                }
                 String splitData = splitData(name, "矿", "_");
-                Log.e("++++++", splitData(name, "矿", "_"));
                 if (!TextUtils.isEmpty(splitData)) {
                     if (splitData.equals("权数据_面")) {
                         style.lineColor = Color.rgb(0, 0, 205);
@@ -974,8 +976,12 @@ public class MapRelatedActivity extends BaseActivity implements View.OnClickList
     }
 
     public String splitData(String str, String strStart, String strEnd) {
-        String tempStr;
-        tempStr = str.substring(str.indexOf(strStart) + 1, str.lastIndexOf(strEnd));
+        String tempStr = null;
+        try {
+            tempStr = str.substring(str.indexOf(strStart) + 1, str.lastIndexOf(strEnd));
+        }catch (Exception e){
+            e.printStackTrace();
+        }
         return tempStr;
     }
 

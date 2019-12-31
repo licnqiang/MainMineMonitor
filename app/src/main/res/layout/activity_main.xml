@@ -19,9 +19,9 @@
     <!--android:text="内蒙古矿山地质环境遥感检测野外验证"-->
     <!--android:textSize="30sp"-->
     <!--android:textStyle="bold" />-->
-<!--<ScrollView-->
-    <!--android:layout_width="match_parent"-->
-    <!--android:layout_height="match_parent">-->
+<ScrollView
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
 
 
     <RelativeLayout
@@ -166,6 +166,6 @@
 
         </LinearLayout>
     </RelativeLayout>
-<!--</ScrollView>-->
+</ScrollView>
 </LinearLayout>
 

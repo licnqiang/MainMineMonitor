@@ -482,7 +482,7 @@ public class HomeActivity extends BaseActivity implements View.OnClickListener, 
                             layerla.setVisible(false);
                         } else {
                             layer.setVisible(true);
-                            layerla.setVisible(true);
+
                         }
                     }
                 }
@@ -557,6 +557,9 @@ public class HomeActivity extends BaseActivity implements View.OnClickListener, 
             for (int k = 0; k < layerSets.size(); k++) {
                 String name = layerSets.get(k).getName();
                 Style style = layerSets.get(k).getStyle();
+                if(!name.contains("矿")||!name.contains("_")){
+                   return;
+                }
                 String splitData = splitData(name, "矿", "_");
                 if (!TextUtils.isEmpty(splitData)) {
                     if (splitData.equals("权数据_面")) {
@@ -638,8 +641,12 @@ public class HomeActivity extends BaseActivity implements View.OnClickListener, 
     }
 
     public String splitData(String str, String strStart, String strEnd) {
-        String tempStr;
-        tempStr = str.substring(str.indexOf(strStart) + 1, str.lastIndexOf(strEnd));
+        String tempStr = null;
+        try {
+            tempStr = str.substring(str.indexOf(strStart) + 1, str.lastIndexOf(strEnd));
+        }catch (Exception e){
+            e.printStackTrace();
+        }
         return tempStr;
     }
 
@@ -1014,6 +1021,8 @@ public class HomeActivity extends BaseActivity implements View.OnClickListener, 
                 demY = location.getLatitude(); // 纬度 DEMTest
             }
         }
+
+        Log.e("--------","-----Long----"+demX+"--------Latitude---"+demY);
         if ((int) demX <= 0 || demY <= 0) {
             ToastUtil.show(this, "正在定位中...");
         } else {
